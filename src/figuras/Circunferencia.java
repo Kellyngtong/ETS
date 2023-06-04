@@ -1,32 +1,40 @@
 package figuras;
 
 
+/**
+ * En esta clase declaramos la circunferencia.
+ **/
 public class Circunferencia {
-    // En esta clase declaramos la circunferencia.
-    private final double radio;
-    private String color;
 
+    private final double radio;
+
+    /**
+     * Constructor con el que podemos crear instancias de la clase.
+     **/
     public Circunferencia(double radio) {
-        //Constructor con el que podemos crear instancias de la clase.
         this.radio = radio;
     }
 
+    /**
+     * Este método aunque actualmente no tiene uso sirve para ver las propiedades: Color, Diametro y área de la Circunferencia.
+     **/
     public void imprimir() {
-        // Este método aunque actualmente no tiene uso sirve para ver las propiedades: Color, Diametro y área de la Circunferencia.
-        color = "rojo";
+        String color = "rojo";
         System.out.println("Di�metro: " + 2 * radio);
         System.out.println("Color: " + color);
         double area = 2 * 3.1416 * radio * radio;
         System.out.println(area);
     }
 
+    /**
+     * Compara si dos circunferencias son iguales en términos de radio, considerando la opción de decimales.
+     *
+     * @param considerarDecimales indica si se deben considerar los decimales al realizar la comparación
+     * @param otro                la otra circunferencia a comparar
+     * @return true si las circunferencias son iguales, false en caso contrario
+     **/
     public boolean esIgual(boolean considerarDecimales, Circunferencia otro) {
-        /**
-         * Compara si dos circunferencias son iguales en términos de radio, considerando la opción de decimales.
-         * @param considerarDecimales indica si se deben considerar los decimales al realizar la comparación
-         * @param otro la otra circunferencia a comparar
-         * @return true si las circunferencias son iguales, false en caso contrario
-         */
+
         double radio1 = this.radio;
         double radio2 = otro.getRadio();
         if (considerarDecimales) {
@@ -36,11 +44,13 @@ public class Circunferencia {
         }
     }
 
+    /**
+     * El método simplemente devuelve el valor del atributo radio.
+     * Eliminamos el "Setter" al ser círculo final y no necesitarlo.
+     **/
     public double getRadio() {
-        // El método simplemente devuelve el valor del atributo radio.
+        //
         return radio;
     }
-
-    //Eliminamos el "Setter" al ser círculo final y no necesitarlo.
 }
 
